@@ -1,0 +1,61 @@
+﻿<Application x:Class="SoftBoxLauncher.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:SoftBoxLauncher.Converters">
+    <Application.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <converters:StringNotEmptyToVisibilityConverter x:Key="StringNotEmptyToVisibilityConverter" />
+        <converters:AppStateToBrushConverter x:Key="AppStateToBrushConverter" />
+
+        <SolidColorBrush x:Key="WindowBorderBrush" Color="#223247" />
+        <SolidColorBrush x:Key="TitleBarBackgroundBrush" Color="#121C2B" />
+        <SolidColorBrush x:Key="TitleBarForegroundBrush" Color="#F4F8FF" />
+        <SolidColorBrush x:Key="TitleButtonHoverBrush" Color="#2E435F" />
+        <SolidColorBrush x:Key="TitleButtonPressedBrush" Color="#3A587C" />
+        <SolidColorBrush x:Key="TitleButtonCloseHoverBrush" Color="#D94A4A" />
+
+        <SolidColorBrush x:Key="ThemeSwitchOffBrush" Color="#3A506A" />
+        <SolidColorBrush x:Key="ThemeSwitchOnBrush" Color="#5DA7FF" />
+        <SolidColorBrush x:Key="ThemeSwitchThumbBrush" Color="#F8FCFF" />
+
+        <Color x:Key="WindowGradStartColor">#0B1428</Color>
+        <Color x:Key="WindowGradMidColor">#15345C</Color>
+        <Color x:Key="WindowGradEndColor">#091425</Color>
+        <SolidColorBrush x:Key="AuraLeftBrush" Color="#3088D1FF" />
+        <SolidColorBrush x:Key="AuraRightBrush" Color="#2875F3D7" />
+
+        <SolidColorBrush x:Key="ShellBackgroundBrush" Color="#33131F33" />
+        <SolidColorBrush x:Key="ShellBorderBrush" Color="#2EFFFFFF" />
+        <SolidColorBrush x:Key="ShellTitleBrush" Color="#FFFFFF" />
+        <SolidColorBrush x:Key="ShellSubtitleBrush" Color="#D4E4FF" />
+        <SolidColorBrush x:Key="PanelBackgroundBrush" Color="#2AFFFFFF" />
+        <SolidColorBrush x:Key="ErrorBackgroundBrush" Color="#2AFFFFFF" />
+        <SolidColorBrush x:Key="ErrorForegroundBrush" Color="#FFD2D2" />
+
+        <SolidColorBrush x:Key="CardBackgroundBrush" Color="#22FFFFFF" />
+        <SolidColorBrush x:Key="CardBorderBrush" Color="#35FFFFFF" />
+        <SolidColorBrush x:Key="CardTitleBrush" Color="#FFFFFF" />
+        <SolidColorBrush x:Key="CardDescriptionBrush" Color="#D8E9FF" />
+        <SolidColorBrush x:Key="CardAssetBrush" Color="#A9C3E7" />
+        <SolidColorBrush x:Key="CardIconBackgroundBrush" Color="#35FFFFFF" />
+        <SolidColorBrush x:Key="CardExtensionBrush" Color="#D4E5FF" />
+
+        <SolidColorBrush x:Key="ProgressTrackBrush" Color="#2CFFFFFF" />
+        <SolidColorBrush x:Key="ProgressFillBrush" Color="#4DABFF" />
+        <SolidColorBrush x:Key="ProgressTextBrush" Color="#CDE3FF" />
+        <SolidColorBrush x:Key="ScrollBarTrackBrush" Color="#30435A72" />
+        <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="#8AAFD7FF" />
+        <SolidColorBrush x:Key="ScrollBarThumbHoverBrush" Color="#B3CFF2FF" />
+        <SolidColorBrush x:Key="ScrollBarThumbPressedBrush" Color="#D5E6FFFF" />
+
+        <SolidColorBrush x:Key="ButtonPrimaryBrush" Color="#2A7DFF" />
+        <SolidColorBrush x:Key="ButtonPrimaryHoverBrush" Color="#3A95FF" />
+        <SolidColorBrush x:Key="ButtonPrimaryPressedBrush" Color="#1D62D3" />
+        <SolidColorBrush x:Key="ButtonPrimaryDisabledBrush" Color="#557B8EAA" />
+        <SolidColorBrush x:Key="ButtonSecondaryBrush" Color="#2DFFFFFF" />
+        <SolidColorBrush x:Key="ButtonSecondaryHoverBrush" Color="#46FFFFFF" />
+
+        <SolidColorBrush x:Key="FooterForegroundBrush" Color="#D8EBFF" />
+        <SolidColorBrush x:Key="FooterSecondaryForegroundBrush" Color="#BCE5FF" />
+    </Application.Resources>
+</Application>
