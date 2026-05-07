@@ -142,7 +142,7 @@ public sealed class MainViewModel : ViewModelBase
         }
         catch (Exception ex)
         {
-            ErrorMessage = ex.Message;
+            ErrorMessage = ToUserFacingError(ex);
             StatusText = "Failed to load apps";
         }
         finally
@@ -201,7 +201,7 @@ public sealed class MainViewModel : ViewModelBase
         }
         catch (Exception ex)
         {
-            ErrorMessage = ex.Message;
+            ErrorMessage = ToUserFacingError(ex);
             StatusText = "Install All failed";
         }
         finally
@@ -252,11 +252,32 @@ public sealed class MainViewModel : ViewModelBase
         }
         catch (Exception ex)
         {
-            await _dialogService.ShowErrorAsync("Auto Update Error", ex.Message);
+            await _dialogService.ShowErrorAsync("Auto Update Error", ToUserFacingError(ex));
         }
         finally
         {
             UpdateProgressText = string.Empty;
         }
+    }
+
+    private static string ToUserFacingError(Exception exception)
+    {
+        var message = exception.Message;
+        if (string.IsNullOrWhiteSpace(message))
+        {
+            return "Operation failed.";
+        }
+
+        var trimmed = message.TrimStart();
+        if (trimmed.StartsWith("<", StringComparison.Ordinal) ||
+            message.Contains("<html", StringComparison.OrdinalIgnoreCase) ||
+            message.Contains("<!DOCTYPE", StringComparison.OrdinalIgnoreCase))
+        {
+            return "GitHub returned an HTML error page instead of release data.";
+        }
+
+        return message.Length <= 500
+            ? message
+            : message[..500] + "...";
     }
 }

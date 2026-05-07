@@ -406,14 +406,18 @@
 
                     <Border Grid.Row="1"
                             Margin="0 16 0 0"
+                            MaxHeight="120"
                             CornerRadius="12"
                             Background="{DynamicResource ErrorBackgroundBrush}"
                             Padding="12"
                             Visibility="{Binding HasError, Converter={StaticResource BoolToVisibilityConverter}}">
-                        <TextBlock Text="{Binding ErrorMessage}"
-                                   Foreground="{DynamicResource ErrorForegroundBrush}"
-                                   FontWeight="SemiBold"
-                                   TextWrapping="Wrap" />
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                      HorizontalScrollBarVisibility="Disabled">
+                            <TextBlock Text="{Binding ErrorMessage}"
+                                       Foreground="{DynamicResource ErrorForegroundBrush}"
+                                       FontWeight="SemiBold"
+                                       TextWrapping="Wrap" />
+                        </ScrollViewer>
                     </Border>
 
                     <ScrollViewer Grid.Row="2"
